@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="width">width: <span class="screenwidth"></span></p>
+    <p class="height">height: <span class="screenheight"></span></p>
+
+    <script>
+        const screenheight = document.querySelector('.screenheight');
+        const screenwidth = document.querySelector('.screenwidth');
+
+        function updateScreenSize() {
+            screenheight.textContent = window.innerHeight;
+            screenwidth.textContent = window.innerWidth;
+        }
+
+        window.addEventListener('resize', updateScreenSize);
+        updateScreenSize();
+    </script>
+</body>
+
+</html>

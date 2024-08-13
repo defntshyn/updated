@@ -1,0 +1,511 @@
+/* fonts */
+@import url('https://fonts.cdnfonts.com/css/unbounded');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* animation */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5fefd;
+}
+
+:root {
+    /* status colors */
+    --current-1: #b9ffb3;
+    --current-2: #3b9c36;
+    --current-3: #46b540;
+
+    --canceled-1: #ffb3b3;
+    --canceled-2: #ef4646;
+
+    --rebook-1: #ebeb94;
+    --rebook-2: #b7b716;
+
+    --pending-1: #ffdab9;
+    --pending-2: #fc7b09;
+
+    --available-1: #d4f1f4;
+    --available-2: #1cb7e1;
+
+    --white: #fcfcff;
+    --blue-1: #22326e;
+    --blue-2: rgba(34, 50, 110, 0.06);
+    --blue-3: rgba(34, 50, 110, 0.521);
+    --blue-4: #283c81;
+    --blue-5: #566296e4;
+    --gray-1: #454545;
+    --gray-2: #f0f0f0;
+    --gray-3: #e6e6e6;
+    --gray-4: #555454;
+    --black-1: rgba(0, 0, 0, 0.874);
+    --red-1: #fb3535;
+    --red-2: #f70000;
+
+    --heading: 'Unbounded', sans-serif;
+    --button: "Nunito", sans-serif;
+    --text: Tahoma;
+}
+
+@media (max-width: 1600px) {
+    .record-list .booking-no .customer-dropdown {
+        left: 16%;
+    }
+
+    .container .table-container .sort .sorting-section {
+        gap: 15px;
+    }
+}
+
+/* main container */
+.main-container {
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background-image: url(https://png.pngtree.com/png-vector/20240401/ourmid/pngtree-elegant-satin-cloth-a-serene-display-of-soft-waves-and-delicate-png-image_11990441.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* transaction navigation */
+.content-navigation {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 0 15px;
+    gap: 15px;
+}
+
+.content-navigation a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    color: var(--blue-1);
+    font-family: var(--text);
+    width: 120px;
+    height: 50px;
+    letter-spacing: 2px;
+}
+
+a.active-content {
+    position: relative;
+}
+
+a.active-content::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--blue-1);
+    border-radius: 15px 15px 0 0;
+}
+
+/* search bar and adding new record */
+.section {
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    gap: 10px;
+}
+
+.section .search-bar {
+    width: 100%;
+    display: flex;
+    background-color: var(--white);
+    border: 1px solid var(--blue-3);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.section .search-bar label {
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px 10px 5px 8px;
+    border-right: 1px solid var(--blue-1);
+    display: flex;
+    align-items: center;
+    color: var(--blue-1);
+}
+
+.section .search-bar input {
+    padding: 0 10px;
+    width: 100%;
+    background-color: transparent;
+    font-size: 17px;
+    border: none;
+    border-radius: 20px;
+    transition: border 200ms;
+}
+
+.section .search-bar input:focus {
+    outline: none;
+}
+
+/* .section .search-bar label:active{
+    outline: 1px solid var(--blue-1);
+} */
+
+.section button.add-new {
+    width: 10%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 10px;
+    background-color: var(--current-2);
+    border: none;
+    border-radius: 5px;
+    gap: 10px;
+    transition: scale 300ms;
+}
+
+.section button.add-new:active {
+    scale: 0.95;
+}
+
+.section button.add-new i,
+.section button.add-new p {
+    color: var(--white);
+}
+
+.section button.add-new p {
+    font-size: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+/* table */
+.table-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+    font-family: var(--button);
+    font-size: 14px;
+    overflow: hidden;
+    transition: all 300ms;
+}
+
+.record-container {
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.record-container {
+    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 80%;
+    height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue-1) var(--gray-3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+th {
+    padding: 15px 25px;
+    background-color: var(--blue-1);
+    font-weight: bold;
+    color: var(--white);
+    font-size: clamp(0.9375rem, 0.2708rem + 0.6667vw, 1.0625rem);
+}
+
+td {
+    padding: 10px 25px;
+}
+
+tbody tr {
+    transition: background-color 200ms;
+    cursor: default;
+}
+
+tbody tr:hover {
+    background-color: var(--blue-2);
+}
+
+tbody tr:hover .record-status select {
+    background-color: var(--white);
+}
+
+tbody tr:hover .booking-no p {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--blue-1);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+tbody tr:hover span.modify-delete,
+tbody tr:hover span.modify-edit {
+    opacity: 1;
+}
+
+.table-container th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.booking-no {
+    position: relative;
+}
+
+.booking-no .customer-dropdown {
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: var(--blue-1);
+    position: absolute;
+    left: 20%;
+    font-size: inherit;
+    z-index: 4;
+}
+
+.booking-no .customer-dropdown a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 2px 20px;
+    transition: background-color 200ms, color 200ms;
+}
+
+.booking-no .customer-dropdown a:hover {
+    background-color: var(--white);
+    color: var(--blue-1);
+}
+
+.booking-no p {
+    transition: font-weight 200ms, letter-spacing 200ms, color 200ms;
+}
+
+.record-status select {
+    appearance: none;
+    font-size: inherit;
+    width: 120px;
+    height: 35px;
+    padding: 2px;
+    background-color: transparent;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 200ms, appearance 200ms;
+}
+
+.record-status select:focus {
+    outline: none;
+}
+
+.record-status select:hover {
+    appearance: auto;
+}
+
+
+.booking-status option[value="booked"] {
+    color: green;
+}
+
+.booking-status option[value="pending"] {
+    color: orange;
+}
+
+.booking-status option[value="canceled"] {
+    color: red;
+}
+
+.booking-status option[value="checkIn"] {
+    color: blue;
+}
+
+.booking-status option[value="checkOut"] {
+    color: gray;
+}
+
+.modify-button button {
+    position: relative;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: color 200ms scale 200ms;
+}
+
+.modify-button button:active {
+    scale: 0.95;
+}
+
+.modify-button span {
+    position: absolute;
+    font-size: 10px;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.modify-button span.modify-edit {
+    top: 100%;
+    left: -2%;
+}
+
+.modify-button span.modify-delete {
+    top: 100%;
+    left: -20%;
+}
+
+.modify-button button.edit-button {
+    color: var(--blue-3);
+}
+
+.modify-button button.edit-button:hover {
+    color: var(--blue-1);
+}
+
+.modify-button button.delete-button {
+    color: var(--red-1);
+}
+
+.modify-button button.delete-button:hover {
+    color: var(--red-2);
+}
+
+/* sorting section */
+.sort {
+    background-color: var(--blue-1);
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.sort .sorting-section {
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sort .sorting-section div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sort .sorting-section label {
+    text-wrap: nowrap;
+    width: 45%;
+    color: var(--white);
+}
+
+.sort .sorting-section select,
+.sort .sorting-section input#sort-day {
+    width: 55%;
+    height: 30px;
+    padding: 3px;
+    font-size: clamp(0.8125rem, 0.1458rem + 0.6667vw, 0.9375rem);
+}
+
+.sort .sorting-section input#sort-day {
+    font-size: clamp(0.8125rem, 0.1458rem + 0.6667vw, 0.9375rem);
+    font-family: inherit;
+    letter-spacing: 2px;
+}
+
+.sort .sorting-section select:focus {
+    outline: none;
+}
+
+fieldset.header-sort {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 70%;
+    overflow: auto;
+    padding: 10px 0;
+    /* scrollbar-width: thin;
+    scrollbar-color: var(--gray-2) var(--blue-1); */
+}
+
+fieldset.header-sort::-webkit-scrollbar {
+    width: 6px;
+}
+
+fieldset.header-sort::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+fieldset.header-sort::-webkit-scrollbar-thumb {
+    background: var(--gray-2);
+    border-radius: 10px;
+}
+
+fieldset.header-sort label {
+    font-size: clamp(0.8125rem, 0.1458rem + 0.6667vw, 0.9375rem);
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+fieldset.header-sort input[type="checkbox"] {
+    scale: 1.3;
+    margin: 2px;
+    accent-color: var(--white);
+}
+
+.sort button.reset-button {
+    background-color: var(--canceled-2);
+    color: var(--white);
+    font-family: var(--button);
+    font-size: clamp(0.8125rem, 0.1458rem + 0.6667vw, 0.9375rem);
+    letter-spacing: 3px;
+    font-weight: bolder;
+    border: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 200ms, scale 200ms;
+}
+
+.sort button.reset-button:hover {
+    background-color: var(--red-1);
+}
+
+.sort button.reset-button:active {
+    scale: 0.98;
+}

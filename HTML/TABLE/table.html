@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction | Baler Nina</title>
+    <script src="https://kit.fontawesome.com/d8f0503c9b.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- CONTENT -->
+        <div class="content-navigation">
+            <a class="active-content" href="#">Booking</a>
+            <a href="#">Re-Booking</a>
+            <a href="#">Payment</a>
+            <a href="#">Penalty</a>
+        </div>
+
+        <div class="section">
+            <div class="search-bar">
+                <!-- live search po ito so no need button echendes? -->
+                <label for="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+                <input id="search" type="text" placeholder="search...">
+            </div>
+            <button type="button" class="add-new" onclick="window.location.href='Add Booking/1_RoomSelection.html'">
+                <i class="fa-solid fa-plus"></i>
+                <!-- <span></span> -->
+                <p>add</p>
+            </button>
+        </div>
+
+        <div class="table-container">
+            <div class="record-container">
+                <table>
+                    <thead class="record-header">
+                        <tr>
+                            <th>Booking Ref No</th>
+                            <th>Room ID</th>
+                            <th>Date Booked</th>
+                            <th>Name</th>
+                            <th>Check-In</th>
+                            <th>Check-Out</th>
+                            <th>Total</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Modify</th>
+                            <th>Eme</th>
+                            <th>Hatdog</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="record-list">
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-09-2024</td>
+                            <td>Michael Nabong</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Shayne Danos</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Precious Yanga</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled" selected>Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Jeff Calamay</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Ayevin Hao</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn" selected>Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Andrea Lopez</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending" selected>Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Shaine Ortiz</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Kyle Liezel</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Charles Bisnan</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut" selected>Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Ransy Magalong</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut" selected>Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Samuela Due</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending" selected>Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Jamie Lozada</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut" selected>Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Aliyah Roque</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending" selected>Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="booking-no">
+                                <p>1234567890</p>
+                                <div class="customer-dropdown">
+                                    <a href="#">Payment</a>
+                                    <a href="#">Penalty</a>
+                                </div>
+                            </td>
+                            <td>103</td>
+                            <td>11-08-2024</td>
+                            <td>Sean Consignado</td>
+                            <td>11-10-2024</td>
+                            <td>11-15-2024</td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                            <td class="record-status">
+                                <select class="booking-status" name="status">
+                                    <option value="booked">Booked</option>
+                                    <option value="pending" selected>Pending</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="checkIn">Checked-In</option>
+                                    <option value="checkOut">Checked-Out</option>
+                                </select>
+                            </td>
+                            <td class="modify-button">
+                                <button class="edit-button">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span class="modify-edit">edit</span>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fa-solid fa-ban"></i>
+                                    <span class="modify-delete">delete</span>
+                                </button>
+                            </td>
+                            <td>10500.00</td>
+                            <td>2500.00</td>
+                        </tr>
+                        <!-- wag mo gagalawin to for extra space sa baba to para di matabunan yung dropdown ng booking ref no -->
+                        <tr>
+                            <td>
+                                <br>
+                                <br>
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="sort">
+                <div class="sorting-section">
+                    <div>
+                        <label for="sort-day">Name</label>
+                        <select name="sort-day">
+                            <option value="default">Default</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sort-day">Date Booked</label>
+                        <!-- <select name="sort-day">
+              <option value="default">Default</option>
+              <option value="ascending">Ascending</option>
+              <option value="descending">Descending</option>
+            </select> -->
+                        <input type="date" id="sort-day">
+                    </div>
+                    <div>
+                        <label for="sort-status">Status</label>
+                        <select name="sort-day">
+                            <option value="default-status">Default</option>
+                            <option value="booked">Booked</option>
+                            <option value="pending">Pending</option>
+                            <option value="canceled">Canceled</option>
+                            <option value="checkIn">Checked-In</option>
+                            <option value="checkOut">Checked-Out</option>
+                        </select>
+                    </div>
+                    <fieldset class="header-sort">
+                        <div>
+                            <label>
+                                <input id="booking-ref" type="checkbox" name="booking-ref">
+                                Booking Ref No.
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="room-id" type="checkbox" name="room-id">
+                                Room Id
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="date-booked" type="checkbox" name="date-booked">
+                                Date Booked
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="client-name" type="checkbox" name="client-name">
+                                Name
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="check-in" type="checkbox" name="check-in">
+                                Check-In
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="check-out" type="checkbox" name="check-out">
+                                Check-Out
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="booking-status" type="checkbox" name="booking-status">
+                                Status
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="check-in" type="checkbox" name="check-in">
+                                Check-In
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="check-out" type="checkbox" name="check-out">
+                                Check-Out
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="booking-status" type="checkbox" name="booking-status">
+                                Status
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="check-in" type="checkbox" name="check-in">
+                                Check-In
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="check-out" type="checkbox" name="check-out">
+                                Check-Out
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input id="booking-status" type="checkbox" name="booking-status">
+                                Status
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <button class="reset-button">RESET</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
